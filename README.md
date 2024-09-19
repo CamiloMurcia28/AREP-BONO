@@ -18,6 +18,8 @@ java -cp "target/classes" escuelaing.edu.co.calcreflex.CalcReflexBEServer
 java -cp "target/classes" escuelaing.edu.co.calcreflex.CalcReflexFacade
 `
 
+Abrimos el navegador y ejecutamos http://localhost:35000
+
 Implementacion de bubbleSort:
 
 ![image](https://github.com/user-attachments/assets/b41a4f19-5e31-4155-95cd-48161105b548)
