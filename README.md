@@ -1,13 +1,21 @@
-## Parcial AREP Tercio 1
+## BONO Parcial AREP Tercio 1
 
 #Instrucciones para ejecutar la aplicacion
+
+`
+git clone https://github.com/CamiloMurcia28/AREP-BONO.git
+`
 
 `
 mvn clean install
 `
 
 `
-java -cp "target/classes" escuelaing.edu.co.parcialarep.HttpServer
+java -cp "target/classes" escuelaing.edu.co.calcreflex.CalcReflexBEServer
+`
+
+`
+java -cp "target/classes" escuelaing.edu.co.calcreflex.CalcReflexFacade
 `
 
 Implementacion de bubbleSort:
