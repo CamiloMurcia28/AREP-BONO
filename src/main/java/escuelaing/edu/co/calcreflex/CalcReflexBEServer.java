@@ -125,14 +125,40 @@ public class CalcReflexBEServer {
 
     }
 
-    public static String computeMathCommand(String command) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException{
-        Class c = Math.class;
-        Class [] parameterTypes = {double.class};
-        Method m = c.getDeclaredMethod("abs", parameterTypes);
-        Object[] params = {-2.0};
-        String resp = m.invoke(null, (Object) params).toString();
-        
-        return resp;
+
+    public static String computeMathCommand(String uri) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+            String command = uri.split("=")[1];
+
+
+            Class c = Math.class;
+            Class[] parameterTypes={double.class};
+            Method m =c.getDeclaredMethod(command.split("\\(")[0], parameterTypes);
+
+            String number = command.split("[\\(\\)]")[1];
+
+            double numero = Double.parseDouble(number);
+
+            Object[] params = {numero};
+            String resp = m.invoke(null, params).toString();
+            return resp;
+        }
+    
+    static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        boolean swapped;
+
+        for (int i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) break;
+        }
     }
     
 }
